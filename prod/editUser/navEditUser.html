@@ -1,0 +1,9 @@
+
+  <div class="container-fluid">
+    <ul class="nav nav-pills" style="margin:10px;">
+            <li><a href="#!/users" ng-click="setActive($event);">Пользователи</a></li>
+            <li class="active"><a href="#!/users/{{userId}}" ng-click="setActive($event);">Данные</a></li>
+            <li><a href="#!/users/{{userId}}/transactions">Операции</a></li>
+            <li><a href="#!/users/{{userId}}/recharge"  ng-class="{active:setActiveClass}">Баланс</a></li>
+    </ul>
+  </div>

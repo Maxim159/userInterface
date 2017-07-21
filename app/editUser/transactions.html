@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <ul class="nav nav-pills" style="margin:10px;">
+            <li><a href="#!/users">Пользователи</a></li>
+            <li><a href="#!/users/{{userId}}">Данные</a></li>
+            <li class="active"><a href="#!/users/{{userId}}/transactions">Операции</a></li>
+            <li><a href="#!/users/{{userId}}/recharge">Баланс</a></li>
+    </ul>
+  </div>
+
+<div class="row">
+  <div class="col-xs-6">
+        <div class="well">
+            <label for="dateRangeStart">Start Date: {{ data.dateStart | date:'yyyy-MM-dd a' }}</label>
+ 
+            <datetimepicker data-ng-model="data.dateStart" data-on-set-time="onTimeSetStart(newDate, oldDate)"
+                data-datetimepicker-config="{ startView:'day', minView:'day' }" />        
+        </div>
+        
+                
+  </div>
+
+  <div class="col-xs-6">
+    
+    <div class="well">
+            <label for="dateRangeStart">End Date: {{ data.dateEnd | date:'yyyy-MM-dd a' }}</label>
+ 
+            <datetimepicker data-ng-model="data.dateEnd" data-on-set-time="onTimeSetEnd(newDate, oldDate)"
+                data-datetimepicker-config="{ startView:'day', minView:'day' }" />        
+    </div>
+            
+  </div>
+</div>
+
+<table class="table">
+      <thead>
+        <tr>
+          <th>user_id</th>
+          <th>user_balance</th>
+          <th>amount</th>
+          <th>comment</th>
+          <th>operation_id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="transaction in transactionsList">
+            
+            
+            <th>{{transaction.user_id}}</th>
+            <th>{{transaction.user_balance}}</th>
+            <th>{{transaction.amount}}</th>
+            <th>{{transaction.comment}}</th>
+            <th>{{transaction.operation_id}}</th>
+            
+        </tr>
+       </tbody>
+    </table>

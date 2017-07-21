@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <ul class="nav nav-pills" style="margin:10px;">
+            <li><a href="#!/users">Пользователи</a></li>
+            <li><a href="#!/users/{{userId}}">Данные</a></li>
+            <li><a href="#!/users/{{userId}}/transactions">Операции</a></li>
+            <li class="active"><a href="#!/users/{{userId}}/recharge">Баланс</a></li>
+    </ul>
+  </div>
+
+<div class="row">
+    <div class="col-xs-3"></div>
+  <div class="col-xs-6">
+   <form class="form-horizontal" role="form">
+    <div class="form-group">
+        <label for="inputUserAmount" class="col-sm-2 control-label">Amount</label>
+        <div class="col-sm-10">
+        <input class="form-control" id="inputUserAmount" ng-model="userList.balance">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputUserComment" class="col-sm-2 control-label">Comment</label>
+        <div class="col-sm-10">
+        <textarea class="form-control" rows="3" ng-model="userList.comment"></textarea>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" ng-click="userRecharge()">Изменить</button>
+        </div>
+    </div>
+    </form>
+    
+  </div>
+  <div class="col-xs-3"></div>
+ 
+</div>
